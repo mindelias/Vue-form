@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to vue</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        
+     
+
+    <div id="aminat">
+        <h1>{{welcome}}</h1>
+        <!-- <p>{{food()}}</p> -->
+
+        <!-- <input class="form-control" v-on:input = 'inputText'><br>
+        <p> Text: {{inputData}}</p>
+         <button class = " btn btn-success" v-on:click = "increase"> Increase</button>
+         <button class = " btn btn-dark" v-on:click = "decrease"> Decrease</button>
+         <p>{{number}}</p>
+
+         <a v-bind:href="link">fabricaana</a>
+         <input type = "text" v-bind:value="text">hr -->
+
+         <!-- <input class = "form-control" type = "number" v-on:keyup.space = "digit">
+         <button class = " btn btn-success" v-on:click= "addBy"> Add By {{total}}</button>
+         <button class = " btn btn-dark" v-on:click = "subtBy"> Subtract By {{total}}</button>
+         <p>Total:{{newNumber}}</p> -->
+
+
+            <!-- <div  v-bind:class="alert" > message</div>
+            
+            <button  class ="btn btn-danger" v-on:click = "success" >success</button>
+            <button  class ="btn btn-info" v-on:click = "secondary">secondary</button> -->
+
+            <!-- <input class="form-control" type = "number" v-model = "number">
+            <button class= 'btn btn-lg btn-warning' v-on:click = 'answer'></button>
+            <div class="alert alert-primary" v-if = 'check'> you have input a correct age</div>
+            <div class="alert alert-danger" v-else = 'check'> Age limit exceeded</div> <hr>
+            -->
+            <!-- <div class = "col-md-3"> 
+                <ul>
+                    <li   v-for="n in loop"> {{ n}}</li>
+                </ul>
+            </div>
+        
+            <div class= "col-md-3"> 
+                <ul>
+                    <li   v-for="n in  country"> {{n}}</li>
+                </ul>
+            </div>
+            <div class= "col-md-3"> 
+                <ul>
+                    <li   v-for="list in Data"> <h3> {{list.name}} </h3>
+                        : {{list.age}} 
+
+                    </li>
+                </ul>
+            </div> -->
+
+            <!-- USING VLOOP AND VFOR TOGETHER -->
+            <!-- <p>please select the day and time you wish to come for the aptitude test</p>
+
+            <ul>
+                <li   v-for= " data in  groups"> {{data.Day}}
+
+                    <ul>
+                        <template v-if = "data.Day == 'Monday'">
+                            <li v-for = "list in data.Time"> {{list}}</li>
+                        </template>
+                        <li v-else-if = "data.Day == 'Tuesday'" v-for = 'list in data.Time'>{{list}}</li>
+                        <li v-else-if = "data.Day == 'Wednesday'" v-for = 'list in data.Time'>{{list}}</li>
+                        <li v-else-if = "data.Day == 'Thursday'" v-for = 'list in data.Time'>{{list}}</li>
+                        <li v-else  v-for = 'list in data.Time'>{{list}}</li>
+
+                    </ul>
+
+                </li>
+            </ul> -->
+            <!-- <h2>{{sorting()[2].names}}</h2>
+            <ul >
+            <li v-for = "(data,key) in sorting()">{{key}} :- {{data.names}} {{data.age}}</li>
+            </ul>
+            <ul >
+                <li v-for = "(data,key) in sorting()">
+                    <ul >
+                        <li v-for = "(da,keyy) in data">{{keyy}} : {{da}}</li>
+                        </ul>
+                </li>
+                </ul>
+            <button class="btn btn-primary" v-on:click = "add()">Add</button>
+            <button class="btn btn-secondary" v-on:click = "remove()">Remove</button> -->
+
+            <div class="form-group">
+                <label> Name:</label>
+                <input class="form-control"  v-model ="form.Name">
+                <!-- Lazy binding is when you dont want show each character  or letters you are typing 
+                    in the input box until u ahve left the input field before it reflects. To do this just 
+                    add .lazy to the vmodel i.e v-model.lazy and to trim unwanted 
+                    white spaces, use  v-model.trim
+                 -->
+                <p>{{form.Name}}</p>
+
+            </div>
+            <div class="form-group">
+                    <label> Address:</label>
+                    <input class="form-control"  v-model ="form.Address">
+            </div>
+
+            <div class="form-group"> 
+                    <label> Product: </label>
+                    <select class="form-control" v-model="form.product">
+                        <option disabled value= " bag"> select product</option>
+                        <option v-for = "item in products" v-bind:value = "item.price">{{item.name}} </option>
+                         
+                    </select>
+    
+            </div>
+            <div class="form-group">
+                <label> Multiple:</label>
+                    <select class="form-control" multiple v-model="form.Multiple">
+                        <option disabled value= " bag"> select product</option>
+                        <option v-for = "item in products">{{item.name}} </option>
+                             
+                    </select>
+                     
+            </div>
+
+            <div class="form-group">
+                <input type = "checkbox" v-model = "form.Terms">
+                I Agree To The Terms And Conditons.
+
+            </div>
+
+            <div class="form-group">
+                <p class="text-primary display-4">Tick the language/languages you speak</p>
+                <label>
+                    <input type = "checkbox" v-model = "form.Languages" value=" English">
+                        English
+                </l abel>
+                <label>
+                    <input type = "checkbox" v-model = "form.Languages" value="Spanish">
+                        Spanish
+                </label>
+                <label>
+                    <input type = "checkbox" v-model = "form.Languages" value=" french">
+                        French
+                </label>
+
+            </div>
+
+
+
+
+            <div class="alert alert-success">
+                <ul>
+                    <li v-for = "(key, items) in form"> 
+                        <template v-if= "items == 'Multiple'    ">
+                            <strong>Multiple</strong>
+                            <ul>
+                                <li v-for = "sub in key">{{sub}}</li>
+                            </ul>
+                        </template>
+                        <template v-else-if =" items == 'Languages'">
+                                <strong> Languages</strong>
+                                <ol>
+                                    <li v-for = "lub in key">{{lub}}</li>
+                                </ol>
+
+                        </template>
+                        <template v-else>
+
+                            <strong>{{items}}</strong>{{key}}
+                        </template>
+                    </template>
+
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- EVENTS    -->
+
+            <!-- <button class=" btn btn-info btn-large" v-on:click= "setMessage('This is messsage 1')">button 1</button>
+            <button class=" btn btn-danger btn-large" v-on:click= "setMessage('This is messsage 2')">button 2</button>
+
+            <div class=" alert alert-secondary">{{message}}</div> -->
+
+            <!-- USING DONTRELOAD, STOP AND PREVENT -->
+            <h3>Welcome: {{ Message}}</h3>
+        <form v-on:submit.prevent = "Reload "> 
+            <input type = "text" class=" form-control" v-model= "newMessage"> 
+            <button class="btn btn-primary"> Submit </button>
+            <!-- <button class="btn btn-danger"></button> -->
+            <div v-on:click = "alert('you clicked me')">
+                <a  class="btn btn-secondary" v-on:click.stop= "Reload">using stop</a>
+                <a  class="btn btn-danger" v-on:click.prevent= "Reload">using prev</a>
+            </div>
+        </form> 
+        <form v-on:keyup.up = "Reload " v-on:submit.prevent = "Reload ">
+            <input type = "text" class=" form-control" v-model= "newMessage" v-on:click.once = "clear"> 
+            <button class="btn btn-primary"> Submit </button>
+        </form>
+
+        
+
+
+    </div>
+
+</div>
+
+
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script src = "vue.js"></script>
+    <script src = "main.js"></script>
+</body>
+
+</html>

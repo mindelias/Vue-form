@@ -1,0 +1,43 @@
+/* p{
+    background: lightgreen;
+    border-radius: 20px;
+    border: 2px solid green;
+    padding: 7px;
+    color: azure;
+    font-size: 25px;
+    display: inline;
+    margin: 5px 0px 10px 0px;
+    
+} */
+.list-type{
+    
+    
+}
+#bottle{
+    width: 100%;
+    height: 400px;
+    background: url("images/bottle.png") center no-repeat;
+    margin: 0 auto;
+    background-size: 80%;
+    border: 2px solid green;
+
+}
+#bottle.broken{
+    background: url("images/broken-bottle.jpg") center no-repeat
+}
+#health{
+    width: 100%;
+    border: 2px solid black;
+    margin: 20px auto 20px auto;
+}
+#health div{
+    background-color: green;
+    height: 20px;
+
+}
+#controls{
+    width: 100%;
+    text-align: center;
+    margin: 20px auto 20px auto;
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Welcome to vue</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=" https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div id="main">
+        <div class="container">
+            <div class=" col-md-4 col-md-offset-3">
+                <h2 class=" text-center">Broken Bottle</h2>
+                <hr>
+                <!-- Bottle -->
+                <div id="bottle" v-on:click ="punch" v-bind:class = "{broken:ended}" title="click here to smash the bottle"></div>
+
+                <!-- Health -->
+                <div  id="health">
+                    <div v-bind:style= "{width: health + '%'}"> </div>
+                </div>
+
+                <!-- Timer -->
+                <div id="timer" class="text-center">
+                    <label>Time: {{seconds}} sec</label>
+                </div>
+
+                <!-- difficulty -->
+                <div id="difficulty" class="text-center">
+                    <label class=" radio-inline">
+                        <input type="radio" v-model = "level" value='1' title="Recovery 1+" checked>Low
+                    </label>
+                    <label class=" radio-inline">
+                        <input type="radio"   v-model = "level" value='5' title="Recovery 5+">Medium
+                    </label>
+                    <label class=" radio-inline">
+                        <input type="radio"  v-model = "level" value='10' title="Recovery 10+"> High
+                    </label>
+                </div>
+
+                <!-- Controls -->
+                <div id="controls">
+                    <button v-on:click = "start" class="btn btn-success">Start</button>
+                    <button v-on:click = " Restart" class="btn btn-danger">Restart</button>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+    <script src="vue.js"></script>
+    <script src="main2.js"></script>
+
+</body>
+
+</html>
